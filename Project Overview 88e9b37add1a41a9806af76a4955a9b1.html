@@ -1,0 +1,670 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Project Overview </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="88e9b37a-dd1a-41a9-806a-f76a4955a9b1" class="page sans"><header><h1 class="page-title">Project Overview </h1></header><div class="page-body"><hr id="4de6ddca-090b-4d21-983e-3efdf6264579"/><h2 id="5bb0e053-a256-45a6-aff1-fa489ff90b7d" class="">Current Project Ideas </h2><p id="3d90f128-fe49-4c2a-92ba-7e67b3d7d8ba" class="">These are current descriptions of some of the ideas from our team. </p><p id="39a3e69d-ab3b-41b0-a9bf-612cb6552d35" class=""><strong>Disclaimers: </strong></p><ul id="b87806dc-1d20-441d-93df-8884795a9bdb" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>These projects are merely a proof of concept - </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>The accuracy of the result of these projects may not be the best, but can be optimized utilizing machine learning. </li></ul><ul id="664ef7d0-4198-4f1d-80f3-49a7170ef16a" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>These projects are HIPPA safe - </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>Our team utilizes AWS tools that are HIPPA safe. </li></ul><h3 id="add7f88e-4bbd-4287-83e7-4156d5580477" class="">Assistive Scribe</h3><p id="a03566b5-8af9-47b3-a32f-3ed92d1eae27" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Problem: </strong></strong></strong></strong></strong></strong></strong></strong></strong>During the scribing process, the scribe may have difficultly catching up to the interaction between the doctor and the patient due to a hinderance in typing speed. Moreover, there may be some information spoken between the patient and the doctor that may be missed. </p><p id="6c12f9f7-eee4-4651-bf3a-f67687103e5e" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Solution: </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>An assistive scribe would listen to the patient doctor interaction and suggest information for the scribe to fill out in the scribing form. This reduces the workload of the scribe as information is auto-generated. The scribe also has the option to accept or reject suggestions. </p><p id="cbfed0cb-4cc4-4190-8cc1-1985073a92c5" class="">The information that can be suggested goes as follows: </p><ul id="8d8609a6-0118-4c40-b91a-5e8ac8da975c" class="bulleted-list"><li style="list-style-type:disc">Symptoms of what the patient is experiencing, where the patient is experiencing those symptoms, for how long, the severity, etc. </li></ul><ul id="4c3d4647-ac43-419d-ab75-9bcceb52eb44" class="bulleted-list"><li style="list-style-type:disc">General information about the patient, including their name, age, occupation, etc. </li></ul><ul id="adcbabde-3e04-4fa2-bb5a-6702dcb21a7b" class="bulleted-list"><li style="list-style-type:disc">Family history </li></ul><ul id="54353f54-b453-4a49-9bf8-aa8b0f192fc5" class="bulleted-list"><li style="list-style-type:disc">Medication, to be prescribed, or currently prescribed, the dosage amount, the frequency, etc. </li></ul><ul id="c6629076-d27e-43a8-ab3f-fddef59d014c" class="bulleted-list"><li style="list-style-type:disc">Additional capabilities can be found in the <code>AWS Medical Comprehend</code> section. </li></ul><h3 id="cd29302a-c122-4df6-b9fa-7d501a3cfefc" class="">Documentation Assistant </h3><p id="496aa2ec-73d2-4761-a049-1925b5e70660" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Problem: </strong></strong></strong></strong></strong></strong></strong></strong></strong>Nurses and other personnel currently spend time to fill out information about a patient from forms. These forms also come in a variety of different formats, making it harder for personnel to recognize the correct information to populate fields with information about the patient. </p><p id="f6b49127-bea3-4532-9c57-3b4c8e211720" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Solution: </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>Rather than having personnel populate information about a patient, a computer can automatically recognize key information from forms despite these forms being in a variety of different formats. </p><p id="8b1d3cb5-e0b7-4809-b13e-8cae07f41dd8" class="">This tool can also be helpful for billing purposes, where a computer can automatically detect information from medical bills and populate them to an existing system. </p><h3 id="b471a855-ffc5-4337-8ce8-b50b2369fd5d" class="">ICD-10-CM Billing Helper </h3><p id="96c75f58-5ffb-4fab-b80d-a507b9ffb30c" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Problem: </strong></strong></strong></strong></strong></strong></strong></strong></strong>Workers often have to look up ICD-10-CM codes for a patient visit and populate them in a billing form for each patient. For instance, a doctor’s notes after a patient visit with diagnoses listed requires a human to lookup that diagnoses in the ICD-10-CM codes. Our team proposes that it can be done automatically. </p><p id="47ac4920-7be5-4f6a-b195-1e22002749fa" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Solution: </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>A computer can look through a doctor’s patient notes and identify the ICD-10-CM codes associated with symptoms or diseases specified in the note. The computer can then populate this information for each patient automatically. This information can also be populated into their corresponding medical bill. </p><p id="e9a2e9cd-9616-4f09-95d9-b33ba0a2cfef" class="">Other information that is required for billing can also be retrieved such as the patient information, past history, etc. </p><h1 id="1bb64848-29f6-4a2f-8785-73619c42ddca" class="">Capabilities </h1><p id="0875c399-980a-4ecf-94a4-6d846557f0df" class="">These are some of the tools that our team can use. </p><h3 id="09ef36ed-60f5-4401-a61e-5ab5787571c6" class="">AWS Medical Comprehend </h3><p id="3b7e8677-4f62-46b7-85e8-57d124f97d00" class="">AWS Medical Comprehend can identify information from a given body of text. The information that can be retrieved goes as follows: </p><p id="884ed395-967a-462d-ad6b-b432d19db3db" class=""><strong><strong>RxNorm Concepts </strong></strong></p><ul id="61e9ff77-46fa-4f6f-95f5-c6b11cd4bc0e" class="bulleted-list"><li style="list-style-type:disc">The name of a medication</li></ul><ul id="2f3229ec-8b59-4203-ae77-5a1bc3e92dbd" class="bulleted-list"><li style="list-style-type:disc">The dosage of the medication</li></ul><ul id="85f035af-acf1-4672-9d55-61c8cd28e523" class="bulleted-list"><li style="list-style-type:disc">The frequency of taking that medication</li></ul><ul id="d5460d82-3a8c-4733-b1a2-382e24e56ea3" class="bulleted-list"><li style="list-style-type:disc">How the medication is to be taken</li></ul><p id="18720720-724c-4c86-8376-1e27f03b842e" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>ICD-10-CM Concepts </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><ul id="f20ec772-3035-4310-957d-a04499ce8261" class="bulleted-list"><li style="list-style-type:disc">Disease names and their associated ICD-10-CM concepts, </li></ul><ul id="09471b3d-8297-41f0-a7aa-9da12d96d741" class="bulleted-list"><li style="list-style-type:disc">The symptoms of the patient </li></ul><ul id="cbca327d-e506-4133-98a5-a9b108568582" class="bulleted-list"><li style="list-style-type:disc">The locations of the symptoms (which body area is the patient experiencing pain). </li></ul><p id="3bc001d8-a57a-408d-b4c7-0e41c3e80c9f" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>SNOMED CT Concepts</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><ul id="ca3d1cc7-110b-4577-8782-9955652bd369" class="bulleted-list"><li style="list-style-type:disc">Same as above </li></ul><p id="30ea511e-b57e-4628-8cab-216325ce6d2e" class=""><strong><strong><strong><strong><strong><strong>Entities</strong></strong></strong></strong></strong></strong></p><ul id="0e85b229-672a-42ae-8e21-a56a79f0307b" class="bulleted-list"><li style="list-style-type:disc">Patient information - Age, Occupation, and other information describing the patient. </li></ul><ul id="ed02327c-dd0a-4b04-8032-9c6560f273b3" class="bulleted-list"><li style="list-style-type:disc">Past history - when the patient experienced certain symptoms and experienced certain diseases. </li></ul><ul id="72b89271-1781-4d48-babe-f10a7447d1ca" class="bulleted-list"><li style="list-style-type:disc">Symptoms that the patient is experiencing </li></ul><ul id="52b4e5e6-debf-46a5-901c-3716e2d8f20c" class="bulleted-list"><li style="list-style-type:disc">The locations of the symptoms (which body area is the patient experiencing pain). </li></ul><ul id="d6a63efd-0d7a-4d15-a6a8-7a3176c5a495" class="bulleted-list"><li style="list-style-type:disc">The name of a medication</li></ul><ul id="6e56b3dc-3424-45e8-b958-29c491e0920a" class="bulleted-list"><li style="list-style-type:disc">The dosage of the medication</li></ul><ul id="18412b8c-caf2-4182-8693-314230856713" class="bulleted-list"><li style="list-style-type:disc">The frequency of taking that medication</li></ul><ul id="639afe30-71e0-4344-97f2-30b5c80d036c" class="bulleted-list"><li style="list-style-type:disc">How the medication is to be taken</li></ul><h3 id="c8edfbab-1523-41f8-b054-443d3a4b7c79" class="">AWS Textract</h3><p id="46502b22-0036-4f4a-89fe-5567fb550b29" class="">AWS Textract can retrieve information from documents, whether its structured (in a specified format) or unstructured (comes in a variety of formats). </p><p id="bf1ff946-ad99-431f-913e-5f09dda5f024" class="">Any inquiry can be retrieved from the document. Here’s an example for a vaccine document: </p><figure id="4e630f7f-5813-4f42-9935-b9c30ce13164" class="image"><a href="Project%20Overview%2088e9b37add1a41a9806af76a4955a9b1/Untitled.png"><img style="width:384px" src="Project%20Overview%2088e9b37add1a41a9806af76a4955a9b1/Untitled.png"/></a></figure><hr id="195b50d6-12d3-4e2e-a457-f2f657ad8455"/><div id="0baeb1c8-d572-463d-8aad-6cd0567e3547" class="column-list"><div id="edbf8ec1-1492-4182-adf1-a381f8f75de3" style="width:68.75%" class="column"><figure id="fcc849bd-9b97-41c7-abc4-6ab7d4ccb504" class="image" style="text-align:left"><a href="Project%20Overview%2088e9b37add1a41a9806af76a4955a9b1/Untitled%201.png"><img style="width:528px" src="Project%20Overview%2088e9b37add1a41a9806af76a4955a9b1/Untitled%201.png"/></a></figure></div><div id="4ae4ebe1-597f-43e7-be82-9b074b91b344" style="width:31.25%" class="column"><p id="c7a432ba-8e77-4ea3-b558-8c578f431994" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Example 1 - </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>Spreadsheet </p><ul id="c5470f6e-9f75-48f2-a3bf-afda515ca409" class="bulleted-list"><li style="list-style-type:disc">The program automatically detects that a table format is associated with the document, and creates a “spreadsheet” of information </li></ul><p id="fb50ba1a-97fe-4769-b0a8-1bbb37cdd323" class="">
+</p></div></div><hr id="a4e15006-7665-4baa-b7ea-c6c1cf16e3fb"/><p id="31469a51-98c5-44e9-92af-417f05cd80cd" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Example 2 - </strong></strong></strong></strong></strong></strong></strong></strong></strong>A series of questions corresponding to the document uploaded are asked. </p><figure id="bc143785-c398-4eac-add6-d89de25c7021" class="image"><a href="Project%20Overview%2088e9b37add1a41a9806af76a4955a9b1/Untitled%202.png"><img style="width:755px" src="Project%20Overview%2088e9b37add1a41a9806af76a4955a9b1/Untitled%202.png"/></a></figure><div id="a4649424-fae4-493f-a371-a315bc733546" class="column-list"><div id="c9e3e06e-a25e-48ac-8960-c2348e38ad68" style="width:43.75%" class="column"><ul id="b3fc6bd9-471c-4f54-88bc-b125eab87630" class="bulleted-list"><li style="list-style-type:disc">This is useful because a user can ask whatever information they would like for a batch of documents rather than looking through each one individually. </li></ul></div><div id="011ff93d-eb5c-4648-b145-170fe3061913" style="width:56.25%" class="column"><ul id="c853bf24-4b80-4ee8-9f9c-608ba93e42c5" class="bulleted-list"><li style="list-style-type:disc">Queries, flexible questions, can be asked and the program will return information using machine learning. Eg, it will make an educated guess about the information presented and retrieve the requested information. </li></ul></div></div><h3 id="6ba314fe-ae5e-4f2a-be30-130af7fbde72" class="">AWS Transcribe </h3><p id="366e5309-972c-42fb-8361-6ce99bcc399a" class="">Transcribe can extract words, eg a transcript, from an audio or video file. The transcription service outputs a transcript in either a language specified by the user or the systems’ automatically detected language spoken in the file. </p><h3 id="95ec0bba-082c-4580-894c-0dd545ad5b98" class="">AWS Translate</h3><p id="1bef0163-8d42-4ac6-bef3-bf447c19ff96" class="">Google Translate but in the Amazon eco-system. </p></div></article></body></html>
